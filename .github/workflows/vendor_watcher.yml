@@ -1,0 +1,29 @@
+name: Daily Vendor Risk Watcher
+
+on:
+  schedule:
+    - cron: "0 8 * * *"   # 8:00 AM UTC daily — adjust to your timezone
+  workflow_dispatch: {}    # allows manual trigger from the Actions tab
+
+jobs:
+  check-vendors:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        working-directory: automation
+        run: pip install -r requirements.txt
+
+      - name: Run vendor watcher
+        working-directory: automation
+        env:
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+          AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: python vendor_watcher.py

@@ -1,0 +1,50 @@
+:root {
+  --stone: #F6F4EF;
+  --card: #FFFFFF;
+  --ink: #211F1C;
+  --ink-soft: #4A473F;
+  --muted: #8C887E;
+  --hairline: #E4E0D6;
+  --forest: #1D4B3E;
+  --forest-soft: #E9EFEC;
+  --brass: #B8862E;
+  --brass-soft: #F6ECD8;
+  --brick: #A23B2E;
+  --brick-soft: #F6E7E4;
+
+  --font-display: "Spectral", Georgia, serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--stone);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+a {
+  color: var(--forest);
+}
+
+::selection {
+  background: var(--brass-soft);
+  color: var(--ink);
+}
