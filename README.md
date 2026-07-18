@@ -1,5 +1,8 @@
 # Event Ops Command Center
 
+**Live dashboard:** https://event-ops-command-center-buuz.vercel.app
+**Source code:** https://github.com/karthikeyakoyya/event-ops-command-center
+
 An AI-augmented system for field marketing event operations: research, vendor coordination, outreach sequencing, and post-event reporting — built on Airtable + Claude API + a custom dashboard.
 
 ## Start Here
@@ -60,3 +63,4 @@ event-ops-command-center/
 ## License / Use
 
 Built as a portfolio/demo project. Adapt freely for real team use — just make sure the API keys in `.env` are your own and never committed to version control.
+
